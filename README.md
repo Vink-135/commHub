@@ -2,7 +2,7 @@
 
 > A feature-rich, modern real-time chat application built for seamless communication.
 
-![CommHub Banner](/client/src/assets/logo.png) *(Note: Replace with actual screenshot or keeps logo)*
+![CommHub Banner](/client/src/assets/logo.png) 
 
 **CommHub** is a robust chat application that facilitates real-time messaging, file sharing, and channel-based communication. Built with the MERN stack and Socket.IO, it offers a premium, responsive user interface with dynamic animations.
 
@@ -95,15 +95,7 @@ npm run dev
 
 ---
 
-## 📸 Screenshots
 
-*(Add screenshots here manually after deployment to showcase the UI)*
-
-- **Welcome Screen**: Engaging FTUE with animations.
-- **Chat Interface**: Clean, glassmorphic design.
-- **File Preview**: Modal for viewing shared images.
-
----
 
 ## 🤝 Contributing
 
