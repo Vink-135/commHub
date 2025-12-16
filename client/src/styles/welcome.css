@@ -1,0 +1,60 @@
+.welcome-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0a0a13;
+    /* Deep dark background */
+    overflow: hidden;
+}
+
+.welcome-text {
+    font-size: 3rem;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: entrance 3s ease-in-out forwards;
+    text-align: center;
+}
+
+.highlight {
+    color: #6366f1;
+    /* Neon Primary (Indigo-500 equivalent) */
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+}
+
+@keyframes entrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        filter: blur(10px);
+    }
+
+    30% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1.05);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+        filter: blur(5px);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .welcome-text {
+        font-size: 1.5rem;
+    }
+}

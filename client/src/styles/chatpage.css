@@ -1,0 +1,62 @@
+.chat-page-container {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    background-color: var(--bg-app);
+    overflow: hidden;
+    /* Critical: Stops infinite page growth */
+}
+
+/* Ensure children fill their grid cells */
+.sidebar-wrapper,
+.chat-wrapper,
+.welcome-wrapper {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /* Critical: Stops children from breaking out */
+}
+
+@media screen and (min-width: 720px) and (max-width: 1080px) {
+    .chat-page-container {
+        grid-template-columns: 35% 65%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .chat-page-container {
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+    }
+
+    .sidebar-wrapper {
+        width: 100%;
+    }
+
+    .chat-wrapper,
+    .welcome-wrapper {
+        position: absolute;
+        /* Take over screen */
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background: var(--bg-app);
+    }
+
+    .hidden-on-mobile {
+        display: none !important;
+    }
+
+    .chat-active .sidebar-wrapper {
+        display: none;
+    }
+
+    /* If sidebar is active, hide chat-wrapper (which contains chat or welcome) */
+    .sidebar-active .chat-area,
+    .sidebar-active .welcome-container {
+        display: none !important;
+    }
+
+    /* If chat is active, hide sidebar (already handled by hidden-on-mobile on sidebar wrapper) */
+}
