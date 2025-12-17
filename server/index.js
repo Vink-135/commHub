@@ -11,13 +11,18 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173", // Vite default port
-        methods: ["GET", "POST"]
+        origin: process.env.CLIENT_URL || "*",
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 
 // Middleware
-app.use(cors());
+// Allow specific origins or * for simplicity during initial deploy (refine later for security)
+app.use(cors({
+    origin: process.env.CLIENT_URL || "*",
+    credentials: true,
+}));
 app.use(express.json());
 
 // Routes
